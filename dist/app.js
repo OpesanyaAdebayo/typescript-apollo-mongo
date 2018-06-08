@@ -11,9 +11,11 @@ var path = require("path");
 // GraphQL Stuff
 var apollo_server_express_1 = require("apollo-server-express");
 var graphql_tools_1 = require("graphql-tools");
+var schema_1 = require("./graphql/schema");
+var resolvers_1 = require("./graphql/resolvers");
 var schema = graphql_tools_1.makeExecutableSchema({
-    typeDefs: typeDefs,
-    resolvers: resolvers,
+    typeDefs: schema_1.default,
+    resolvers: resolvers_1.default,
 });
 //------------------------------------------------------------------
 // -----------------------------------------------------------------

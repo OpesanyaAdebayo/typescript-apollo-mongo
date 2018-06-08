@@ -10,6 +10,9 @@ import * as path from 'path';
 // GraphQL Stuff
 import { graphqlExpress, graphiqlExpress } from 'apollo-server-express';
 import { makeExecutableSchema } from 'graphql-tools';
+import typeDefs from './graphql/schema'
+import resolvers from './graphql/resolvers'
+
 const schema = makeExecutableSchema({
     typeDefs,
     resolvers,

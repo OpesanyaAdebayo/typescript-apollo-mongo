@@ -12,7 +12,7 @@ var mongoose = require("mongoose");
 mongoose.connect('mongodb://graphqltest:graphqltest1@ds153460.mlab.com:53460/graphqltest')
     .then(function () { return console.log("Connected to MongoDB"); })
     .catch(function (err) { return console.error(err); });
-var Post = mongoose.model('Post', { title: String, author: String, votes: String });
+var Post = mongoose.model('Post', { title: String, author: String, votes: Number });
 //-----------------------------------------------------------------
 //-----------------------------------------------------------------
 // GraphQL Stuff

@@ -12,7 +12,7 @@ mongoose.connect('mongodb://graphqltest:graphqltest1@ds153460.mlab.com:53460/gra
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error(err));
 
-const Post = mongoose.model('Post', {title: String, author: String, votes: String});
+const Post = mongoose.model('Post', {title: String, author: String, votes: Number});
 //-----------------------------------------------------------------
 
 //-----------------------------------------------------------------

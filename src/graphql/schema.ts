@@ -14,7 +14,7 @@ export default `
   # this schema allows the following mutation:
   type Mutation {
     upvotePost (
-      title: String!
+      title: String
     ): Post
     addPost (
       title: String!

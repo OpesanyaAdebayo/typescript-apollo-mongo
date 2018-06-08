@@ -6,6 +6,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 var express = require("express");
 var bodyParser = require("body-parser");
 var path = require("path");
+//import * as mongoose from 'mongoose';
+//-----------------------------------------------------------------
+// GraphQL Stuff
+var apollo_server_express_1 = require("apollo-server-express");
+var graphql_tools_1 = require("graphql-tools");
+var schema = graphql_tools_1.makeExecutableSchema({
+    typeDefs: typeDefs,
+    resolvers: resolvers,
+});
+//------------------------------------------------------------------
 // -----------------------------------------------------------------
 // Import router
 // -----------------------------------------------------------------
@@ -21,5 +31,7 @@ app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.use(index_1.default);
+app.use('/graphql', bodyParser.json(), apollo_server_express_1.graphqlExpress({ schema: schema }));
+app.get('/graphiql', apollo_server_express_1.graphiqlExpress({ endpointURL: '/graphql' })); // if you want GraphiQL enabled
 exports.default = app;
 //# sourceMappingURL=app.js.map

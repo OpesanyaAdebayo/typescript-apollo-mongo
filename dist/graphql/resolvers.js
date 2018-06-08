@@ -60,7 +60,7 @@ exports.default = {
                 var post;
                 return __generator(this, function (_b) {
                     switch (_b.label) {
-                        case 0: return [4 /*yield*/, Post.findOneAndUpdate({ title: args }, { $inc: { votes: 1 } }, { new: true })];
+                        case 0: return [4 /*yield*/, Post.findOneAndUpdate({ title: args.title }, { $inc: { votes: 1 } }, { new: true })];
                         case 1:
                             post = _b.sent();
                             post._id = post._id.toString();

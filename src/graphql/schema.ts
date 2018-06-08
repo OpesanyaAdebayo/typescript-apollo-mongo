@@ -1,10 +1,9 @@
 export default `
-
   type Post {
     id: String!
     title: String
     author: String
-    votes: Int
+    votes: Int!
   }
 
   # the schema allows the following query:

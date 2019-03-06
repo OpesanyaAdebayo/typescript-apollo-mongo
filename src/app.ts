@@ -8,7 +8,7 @@ import * as path from 'path';
 //-----------------------------------------------------------------
 // MongoDB Stuff
 import * as mongoose from 'mongoose';
-mongoose.connect('mongodb://graphqltest:graphqltest1@ds153460.mlab.com:53460/graphqltest')
+mongoose.connect(process.env.MONGO_URL);
 .then(() => console.log("Connected to MongoDB"))
 .catch(err => console.error(err));
 
